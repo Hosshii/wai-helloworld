@@ -1,0 +1,13 @@
+cradle:
+  stack:
+    - path: "./src"
+      component: "wai-helloworld:lib"
+
+    - path: "./app/Main.hs"
+      component: "wai-helloworld:exe:wai-helloworld-exe"
+
+    - path: "./app/Paths_wai_helloworld.hs"
+      component: "wai-helloworld:exe:wai-helloworld-exe"
+
+    - path: "./test"
+      component: "wai-helloworld:test:wai-helloworld-test"
