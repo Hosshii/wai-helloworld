@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: b2d12fe3f28677fac70cb21b672990ecf84dea904d741f7b5eed2f280b012337
+-- hash: eb9d2272a4b22be607ce44c348af49331eb76e480cfbcf1efae282e32eca41d7
 
 name:           wai-helloworld
 version:        0.1.0.0
@@ -36,6 +36,7 @@ library
       src
   build-depends:
       base >=4.7 && <5
+    , bytestring
     , http-types
     , io-streams
     , mysql-haskell
@@ -52,6 +53,7 @@ executable wai-helloworld-exe
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
+    , bytestring
     , http-types
     , io-streams
     , mysql-haskell
@@ -70,6 +72,7 @@ test-suite wai-helloworld-test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
+    , bytestring
     , http-types
     , io-streams
     , mysql-haskell

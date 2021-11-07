@@ -26,6 +26,7 @@ dependencies:
 - warp
 - mysql-haskell
 - io-streams
+- bytestring
 
 library:
   source-dirs: src
