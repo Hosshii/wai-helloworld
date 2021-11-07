@@ -24,6 +24,8 @@ dependencies:
 - http-types
 - wai
 - warp
+- mysql-haskell
+- io-streams
 
 library:
   source-dirs: src
