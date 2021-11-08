@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: eb9d2272a4b22be607ce44c348af49331eb76e480cfbcf1efae282e32eca41d7
+-- hash: e25cb003715d92abd76263b0a41fddc818c193eff2110e3ce67f7dac8d01418f
 
 name:           wai-helloworld
 version:        0.1.0.0
@@ -30,6 +30,7 @@ library
       Db
       Handler
       Lib
+      Router
   other-modules:
       Paths_wai_helloworld
   hs-source-dirs:
@@ -37,9 +38,11 @@ library
   build-depends:
       base >=4.7 && <5
     , bytestring
+    , containers
     , http-types
     , io-streams
     , mysql-haskell
+    , text
     , wai
     , warp
   default-language: Haskell2010
@@ -54,9 +57,11 @@ executable wai-helloworld-exe
   build-depends:
       base >=4.7 && <5
     , bytestring
+    , containers
     , http-types
     , io-streams
     , mysql-haskell
+    , text
     , wai
     , wai-helloworld
     , warp
@@ -73,9 +78,11 @@ test-suite wai-helloworld-test
   build-depends:
       base >=4.7 && <5
     , bytestring
+    , containers
     , http-types
     , io-streams
     , mysql-haskell
+    , text
     , wai
     , wai-helloworld
     , warp

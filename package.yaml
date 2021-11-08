@@ -27,6 +27,8 @@ dependencies:
 - mysql-haskell
 - io-streams
 - bytestring
+- containers
+- text
 
 library:
   source-dirs: src
