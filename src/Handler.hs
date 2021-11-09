@@ -1,6 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module Handler (index, hello, notFound, Handler, t1, Response (..), getMessage) where
+module Handler (index, hello, notFound, Handler, t1, Response (..), getMessage, pathParam, pathParam2) where
 
 import qualified Codec.Binary.UTF8.String as U8S
 import qualified Data.ByteString.Lazy as BL
@@ -36,5 +36,18 @@ getMessage :: Handler
 getMessage conn _ = IOResponse $ do
   (_, is) <- query_ conn "SELECT message FROM messages"
   msg <- Streams.toList is
-  let byteMsg = BL.pack $ U8S.encode $ show msg
+  let byteMsg = str2BLstr $ show msg
   return $ Wai.responseLBS HType.status200 [("Content-Type", "text/plain")] byteMsg
+
+pathParam :: Handler
+pathParam _ req = NormalResponse . Wai.responseLBS HType.status200 [("Content-Type", "text/plain")] . str2BLstr . show $ Wai.rawPathInfo req
+
+pathParam2 :: Handler
+pathParam2 _ req =
+  NormalResponse . Wai.responseLBS HType.status200 [("Content-Type", "text/plain")]
+    . str2BLstr
+    . show
+    $ Wai.rawPathInfo req <> "22"
+
+str2BLstr :: String -> BL.ByteString
+str2BLstr = BL.pack . U8S.encode
