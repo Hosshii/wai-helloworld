@@ -26,4 +26,4 @@ app conn req respond = do
     Handler.NormalResponse n -> respond n
     Handler.IOResponse io -> io >>= respond
   where
-    handler = fromMaybe Handler.notFound (Router.router Router.routeMap (Wai.pathInfo req) (Wai.requestMethod req))
+    handler = fromMaybe Handler.notFound $ Router.router Router.routeMap (Wai.pathInfo req) (Wai.requestMethod req)
