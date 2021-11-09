@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: e25cb003715d92abd76263b0a41fddc818c193eff2110e3ce67f7dac8d01418f
+-- hash: e79792744a5a6067fb00d064198838285ed7582efe797f529a691d30112c20a4
 
 name:           wai-helloworld
 version:        0.1.0.0
@@ -43,6 +43,7 @@ library
     , io-streams
     , mysql-haskell
     , text
+    , utf8-string
     , wai
     , warp
   default-language: Haskell2010
@@ -62,6 +63,7 @@ executable wai-helloworld-exe
     , io-streams
     , mysql-haskell
     , text
+    , utf8-string
     , wai
     , wai-helloworld
     , warp
@@ -83,6 +85,7 @@ test-suite wai-helloworld-test
     , io-streams
     , mysql-haskell
     , text
+    , utf8-string
     , wai
     , wai-helloworld
     , warp

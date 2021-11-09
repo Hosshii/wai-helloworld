@@ -24,7 +24,8 @@ routeMap =
   T.Node
     ("/", [(HType.methodGet, Handler.index)])
     [ T.Node ("hello", [(HType.methodGet, Handler.hello), (HType.methodPost, Handler.t1)]) [],
-      T.Node ("world", [(HType.methodGet, Handler.hello)]) []
+      T.Node ("world", [(HType.methodGet, Handler.hello)]) [],
+      T.Node ("messages", [(HType.methodGet, Handler.getMessage)]) []
     ]
 
 goDown :: RouterTree -> SplittedPath -> Maybe RouterTree
